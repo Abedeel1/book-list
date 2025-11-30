@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 
+# Final version for submission
 app = FastAPI()
 
 # قاعدة بيانات في الذاكرة
@@ -43,4 +44,5 @@ def delete_book(book_id: int):
         if book["id"] == book_id:
             books.remove(book)
             return {"message": "Book deleted"}
-    raise HTTPException(status_code=404, detail="Book not found")
+    
+raise HTTPException(status_code=404, detail="Book not found")
